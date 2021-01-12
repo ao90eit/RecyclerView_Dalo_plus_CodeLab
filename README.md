@@ -6,8 +6,9 @@ A simplified use of RecyclerView. I decided to look over a [RecyclerView CodeLab
 
 Every commit has added functionality.
 
-- [9ba2727](https://github.com/aormsbyEIT/RecyclerView_Dalo_plus_CodeLab/commit/9ba27272029fe07a8e8a8496fb793c25b708c0f3) -> Basic RecyclerView implementation, displays a scrollable list of words
-- [163d663](https://github.com/aormsbyEIT/RecyclerView_Dalo_plus_CodeLab/commit/163d663c283657e434fc370c338cffafe73b29da) -> Add click event to RecyclerView list item by adding onClickListener into the custom ViewHolder class, changes text on click (unsure if best practice, but it works)
+- [9ba2727](https://github.com/aormsbyEIT/RecyclerView_Dalo_plus_CodeLab/tree/9ba27272029fe07a8e8a8496fb793c25b708c0f3) -> Basic RecyclerView implementation, displays a scrollable list of words
+- [163d663](https://github.com/aormsbyEIT/RecyclerView_Dalo_plus_CodeLab/tree/163d663c283657e434fc370c338cffafe73b29da) -> Add click event to RecyclerView list item by adding onClickListener into the custom ViewHolder class, changes text on click (unsure if best practice, but it works)
+- [d9caaa7](https://github.com/aormsbyEIT/RecyclerView_Dalo_plus_CodeLab/tree/d9caaa74df9b21759dd52afc198094b4b4ba4c8a) -> Add a floating action button (FAB) to handle a click event and add items to the RecyclerView list and update the view
 
 ## CodeLab Notes
 
