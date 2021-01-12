@@ -13,6 +13,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
@@ -20,6 +21,11 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     public WordListAdapter(List<String> wordList) {
         this.wordList = wordList;
+    }
+
+    public void updateWordList(List<String> words) {
+        wordList = words;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -50,6 +56,23 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         public WordViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+        }
+
+        @OnClick(R.id.word_item_textView)
+        public void onClickWord (View v) {
+            
+            // Get the position of the item that was clicked.
+            int clickedPosition = getLayoutPosition();
+
+            // Use that to access the affected item in mWordList.
+            String clickedWord = wordList.get(clickedPosition);
+
+            // Change the word in the mWordList.
+            wordList.set(clickedPosition, "Clicked! " + clickedWord);
+
+            // Notify the adapter, that the data has changed so it can
+            // update the RecyclerView to display the data.
+            updateWordList(wordList);
         }
     }
 }
