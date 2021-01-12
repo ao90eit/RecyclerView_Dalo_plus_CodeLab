@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
     private List<String> wordList = new ArrayList<>();
@@ -36,5 +38,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Connect the adapter with the RecyclerView.
         recyclerView.setAdapter(wordListAdapter);
+    }
+
+    @OnClick(R.id.floating_action_button)
+    public void onClickFab(View v) {
+
+        // Add a new word to the wordList.
+        wordList.add("+ Word " + wordListAdapter.getItemCount());
+
+        // Notify the adapter, that the data has changed.
+        wordListAdapter.updateWordList(wordList);
+
+        // Scroll to the bottom. -> COOL!
+        recyclerView.smoothScrollToPosition(wordListAdapter.getItemCount());
     }
 }
